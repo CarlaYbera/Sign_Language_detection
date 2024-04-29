@@ -3,17 +3,6 @@ import os
 from ultralytics import YOLO
 import cv2
 
-def speak_text(text):
-    # Generate speech from text using gTTS
-    tts = gTTS(text=text, lang='en')
-    tts.save("temp.mp3")  # Save speech to a temporary file
-
-    # Play the speech using a media player
-    os.system("mpg321 temp.mp3")  # Adjust the command based on your system and preferred media player
-
-    # Clean up the temporary file
-    os.remove("temp.mp3")
-
 model = YOLO('best.pt')
 
 current_sentence = []
